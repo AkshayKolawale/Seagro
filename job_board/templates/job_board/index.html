@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board | Seagro</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .search-container input {
+            padding: 10px;
+            width: 60%;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Job Posting Section */
+        .job-posting-form {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-posting-form input, .job-posting-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .job-posting-form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .job-posting-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Featured Jobs Section */
+        .featured-jobs {
+            margin-top: 40px;
+        }
+
+        .job-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .job-item {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            color: #333;
+        }
+
+        .job-item h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .job-item p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .job-item a {
+            background-color: #ff5722; /* Apply Button Color */
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .job-item a:hover {
+            background-color: #e64a19; /* Darker Shade for Hover */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+            }
+
+            header nav ul li {
+                margin: 10px 0;
+            }
+
+            .search-container input {
+                width: 80%;
+            }
+
+            .job-item {
+                height: 350px; /* Adjust height for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/job-board/">Job Board</a></li>
+                <li><a href="/learning-center/">Learning Center</a></li>
+                <li><a href="/community/">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Job Board</h1>
+            <p class="description">Job Board: A platform for job seekers and employers to connect. Whether you're looking for a new opportunity or aiming to find the perfect candidate, this platform serves as a bridge for job listings and recruitment across various industries.</p>
+            <p class="intro-text">Browse available job opportunities or post your own. Whether you're looking to hire or be hired, the Job Board is your go-to place for job listings in various industries.</p>
+
+            <!-- Job Posting Form -->
+            <div class="job-posting-form">
+                <h2>Post a Job</h2>
+                <form action="/post-job" method="POST">
+                    <label for="job-title">Job Title:</label>
+                    <input type="text" id="job-title" name="job_title" required>
+
+                    <label for="company-name">Company Name:</label>
+                    <input type="text" id="company-name" name="company_name" required>
+
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required>
+
+                    <label for="job-description">Job Description:</label>
+                    <textarea id="job-description" name="job_description" rows="4" required></textarea>
+
+                    <button type="submit">Post Job</button>
+                </form>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search for job opportunities..." />
+            </div>
+
+            <!-- Featured Jobs Section -->
+            <h2>Featured Jobs</h2>
+            <div class="job-list">
+                <!-- Job 1 -->
+                <div class="job-item">
+                    <h3>Software Developer</h3>
+                    <p>Location: Remote | Company: TechCorp</p>
+                    <p>We are looking for a talented Software Developer to join our team and work on exciting projects.</p>
+                    <a href="#">Apply Now</a>
+                </div>
+                <!-- Job 2 -->
+                <div class="job-item">
+                    <h3>Marketing Manager</h3>
+                    <p>Location: New York | Company: MarketingPro</p>
+                    <p>Seeking a highly motivated Marketing Manager to lead campaigns and drive growth for our brand.</p>
+                    <a href="#">Apply Now</a>
+                </div>
+                <!-- Job 3 -->
+                <div class="job-item">
+                    <h3>Graphic Designer</h3>
+                    <p>Location: Chicago | Company: DesignWorks</p>
+                    <p>Join our creative team and help design stunning visuals for various marketing materials.</p>
+                    <a href="#">Apply Now</a>
+                </div>
+                <!-- Job 4 -->
+                <div class="job-item">
+                    <h3>Healthcare Administrator</h3>
+                    <p>Location: California | Company: HealthPlus</p>
+                    <p>Looking for an experienced Healthcare Administrator to oversee operations in a large medical facility.</p>
+                    <a href="#">Apply Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Seagro. All rights reserved.</p>
+    </footer>
+</body>
+</html>

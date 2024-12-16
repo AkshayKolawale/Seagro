@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Center | Seagro</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .search-container input {
+            padding: 10px;
+            width: 60%;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .category {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            width: 23%;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 250px;
+        }
+
+        .category h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .category p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .category a {
+            color: #ffcc00;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .category a:hover {
+            color: #fff;
+        }
+
+        /* Featured Courses Section */
+        .featured-courses {
+            margin-top: 40px;
+        }
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .course-item {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        .course-item h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .course-item p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .course-item a {
+            color: #ffcc00;
+            font-weight: bold;
+            text-decoration: none;
+            z-index: 2;
+            position: relative;
+        }
+
+        .course-item a:hover {
+            color: #fff;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+            }
+
+            header nav ul li {
+                margin: 10px 0;
+            }
+
+            .categories {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .category {
+                width: 80%;
+                margin-bottom: 20px;
+                height: 200px;
+            }
+
+            .search-container input {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/job-board/">Job Board</a></li>
+                <li><a href="/learning-center/">Learning Center</a></li>
+                <li><a href="/community/">Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Learning Center</h1>
+            <p class="intro-text">A space for users to access online courses and tutorials on a wide range of topics. Whether you're looking to enhance your professional skills or learn something new for fun, you'll find the resources you need here!</p>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search for courses, tutorials..." />
+            </div>
+
+            <!-- Categories Section -->
+            <h2>Course Categories</h2>
+            <div class="categories">
+                <div class="category" style="background-image: url('https://via.placeholder.com/600x400?text=Technology');">
+                    <h3>Technology</h3>
+                    <p>Explore the latest in software development, web design, AI, and more.</p>
+                    <a href="#">Explore Technology Courses</a>
+                </div>
+                <div class="category" style="background-image: url('https://via.placeholder.com/600x400?text=Business');">
+                    <h3>Business</h3>
+                    <p>Master business strategies, marketing, entrepreneurship, and leadership skills.</p>
+                    <a href="#">Explore Business Courses</a>
+                </div>
+                <div class="category" style="background-image: url('https://via.placeholder.com/600x400?text=Personal+Development');">
+                    <h3>Personal Development</h3>
+                    <p>Build skills in communication, time management, and personal growth.</p>
+                    <a href="#">Explore Personal Development Courses</a>
+                </div>
+                <div class="category" style="background-image: url('https://via.placeholder.com/600x400?text=Creative+Skills');">
+                    <h3>Creative Skills</h3>
+                    <p>Learn design, photography, video editing, and other creative skills.</p>
+                    <a href="#">Explore Creative Skills Courses</a>
+                </div>
+            </div>
+
+            <!-- Featured Courses Section -->
+            <h2>Featured Courses</h2>
+            <div class="course-list">
+                <!-- Course 1 -->
+                <div class="course-item" style="background-image: url('https://via.placeholder.com/600x400?text=Web+Development');">
+                    <h3>Introduction to Web Development</h3>
+                    <p>Learn the fundamentals of building websites, including HTML, CSS, and JavaScript.</p>
+                    <a href="#">Start Learning</a>
+                </div>
+                <!-- Course 2 -->
+                <div class="course-item" style="background-image: url('https://via.placeholder.com/600x400?text=Data+Science');">
+                    <h3>Data Science and Analytics</h3>
+                    <p>Learn the basics of data analysis, visualization, and machine learning.</p>
+                    <a href="#">Start Learning</a>
+                </div>
+                <!-- Course 3 -->
+                <div class="course-item" style="background-image: url('https://via.placeholder.com/600x400?text=Business+Communication');">
+                    <h3>Effective Business Communication</h3>
+                    <p>Improve your communication skills and learn how to communicate effectively in business.</p>
+                    <a href="#">Start Learning</a>
+                </div>
+                <!-- Course 4 -->
+                <div class="course-item" style="background-image: url('https://via.placeholder.com/600x400?text=Photography');">
+                    <h3>Creative Photography Techniques</h3>
+                    <p>Discover the art of photography and learn techniques to capture beautiful images.</p>
+                    <a href="#">Start Learning</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Seagro. All rights reserved.</p>
+    </footer>
+</body>
+</html>

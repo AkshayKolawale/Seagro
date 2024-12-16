@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-box {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+
+        .chat-box .message {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            max-width: 70%;
+        }
+
+        .chat-box .message.sent {
+            background-color: #d1e7ff;
+            margin-left: auto;
+        }
+
+        .chat-box .message.received {
+            background-color: #e2f7e2;
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .send-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .send-btn:hover {
+            background-color: #45a049;
+        }
+
+        .back-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Back Button -->
+        <button class="back-btn" onclick="goBack()">Back</button>
+
+        <h1>Welcome to Chat</h1>
+        <p>Communicate with others in real-time.</p>
+        
+        <div class="chat-box" id="chatBox">
+            <div class="message received">Hello! How can I help you today?</div>
+            <div class="message sent">Hi, I have a question about your service.</div>
+        </div>
+
+        <textarea class="chat-input" id="chatInput" rows="3" placeholder="Type a message..."></textarea>
+        <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var chatInput = document.getElementById('chatInput');
+            var message = chatInput.value.trim();
+            if (message) {
+                var chatBox = document.getElementById('chatBox');
+                var messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'sent');
+                messageDiv.textContent = message;
+                chatBox.appendChild(messageDiv);
+                chatBox.scrollTop = chatBox.scrollHeight;  // Scroll to the bottom
+                
+                chatInput.value = '';  // Clear input field
+            }
+        }
+
+        function goBack() {
+            window.history.back(); // This will take the user to the previous page
+        }
+    </script>
+</body>
+</html>
